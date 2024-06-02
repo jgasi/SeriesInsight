@@ -1,0 +1,81 @@
+<div *ngIf="korisnik" class="profil-form">
+    <h2>Profil korisnika: {{ korisnik.korime }}</h2>
+
+    <div class="form-group">
+        <label for="korime">Korisničko ime: </label>
+        <input id="korime" [(ngModel)]="korisnik.korime" [readonly]="true" />
+    </div>
+
+    <div class="form-group">
+        <label for="ime">Ime: </label>
+        <input id="ime" [(ngModel)]="korisnik.ime" />
+    </div>
+
+    <div class="form-group">
+        <label for="prezime">Prezime: </label>
+        <input id="prezime" [(ngModel)]="korisnik.prezime" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">E-mail: </label>
+        <input id="email" [(ngModel)]="korisnik.email" [readonly]="true" />
+    </div>
+
+    <div class="form-group">
+        <label for="lozinka">Lozinka: </label>
+        <input type="password" id="lozinka" [(ngModel)]="korisnik.lozinka" required />
+    </div>
+
+    <div class="form-group">
+        <label for="adresa">Adresa: </label>
+        <input id="adresa" [(ngModel)]="korisnik.adresa" />
+    </div>
+
+    <div class="form-group">
+        <label for="drzava">Država: </label>
+        <input id="drzava" [(ngModel)]="korisnik.drzava" />
+    </div>
+
+    <div class="form-group">
+        <label for="telefon">Telefon: </label>
+        <input id="telefon" [(ngModel)]="korisnik.telefon" />
+    </div>
+
+    <div class="form-group">
+        <label for="dvorazinskaAutentifikacija">Dvorazinska autentifikacija: </label>
+        <label class="switch">
+            <input type="checkbox" [(ngModel)]="korisnik.dvorazinskaAutentifikacija" name="dvorazinskaAutentifikacija">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+    <div class="container-fluid py-3">
+        <h1>Angular reCAPTCHA v3</h1>
+
+        <form #form="ngForm">
+            <div class="row mt-3">
+                <div class="col-sm-12 mb-2">
+                    <button id="azurirajProfil" type="button" class="btn btn-sm btn-primary"
+                        (click)="send(form)">Ažuriraj podatke</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
+</div>
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIB0AHAThAZgSwDYFpMI0BbAAmAB0A7MskgQzQHNtr4yGBXAFwgG4adRgA98Ad2xQeACw4BWAAyKUIwdSFkkRUvmYYuKCpuFNW1fACMIPPiQ4BGeavUmyuBpZi5jtOv6hsAGcUDwBPDktcCDAAa3V-f0YWNisbOwUXNwBfGjc2FF5fRLpJaTkyB2UAUgSSlAYoQOpmDgAOLL9E6zRYNEdVMiCIXCkyAGIwKbru4j78NEbsLiCOABZOtzoAMgBtNBhGiGpcMIBdYpK6SwY4-Qguaih8SGj+iaaoGf9crrJfui-TRISw8CzobDJMKXUwpCx8FAcABMKjUml+QOoSD4zGYuBg+CCkh4YBkl0CIXCHEw+LRfgYo2YFmwPBgJFWZDAMGorLQ6kxSCJLNJlxQECCLOwxw4Bw8PGwADcYHUKaEGBEyGxRtQCVEYvFNGVZBwAGyouoyGDYZgyHgcADMGzpmIKvHgpJgcRgUDIAGotEFRn1Ljc7gYni8RsQOOMkQ4AJwmzD2-l5aiuu1EMArP0BoMwNAhiBiIIyI7iDiKMhVhyDWMJpMpmgC9BYbCxAg6chUPyh2L3R7PV7Rshea3KzQNJpsVpkFGda5zAsLJYrRzmtN0GRImFkIg8wgMEh4DWUEAAIRgNyCZAAcjAuDAzwAaIYMahBQkF7CYb7D97jCaDDyAA7GsIHfKyIg8PgDLWuwnLcry3z7jBEoAF4wOsG5-Mk5hpLYED2HOOGApuWhdnoBhGD2iR4ak1iEcR850m4HheD4tElP+MZtJYIH2vIljfHQqpUqO0RxCJ9BmAx6REZkdKJJiiQZrsPBhCgMAALxnlBPBnmcz75NQhQ8Opmk6WeDRBEScyGcZfxqRpWm6SAbIMHghm7nQU7NLOVQLiURoVFUii1Fso5Lu8tYiEMIxjJM0yRT08yLIEa5kM4SklKhhLYJhjgmkFZEaE5pm8BZrlnh6cTWCI3lcXRsnwhAiJkCBJX-ORdCCsSIpNf4YoSvK0pkLKDDykq0lieqHBamwuqSQafylFIxpkGaXVblaNp2mQjpdSp-iCvmhaDb54qSmNnjDLgvATqtnJcGgwzvGKbDISltz9uGQ5RgBUxgNJPCLB+10IYoSBrEE0mpcu6XLByh05aVbinVIBZeDoMA+WQw0Qxwt0jA90mQDySEcGeZ7SZa1q2sixWo-4IWM9t7gwJg+1OnD8nETz31hg8EY8WQ4gyCyj1XKD74jVKkPQ7DKXRSuGUckoEV-MddAZu6lpej6-oY8GF2jj9A4iwDvH8YJwk5D1moVZmMQ5kbgaY+dyslmWUAQBW1YB7FEx8QJQnfNreYe0gf14-DaCq0jDoC1rDvGwW0fC1A2PELjptxwnmUa+H6LkSCYL4BCUK7n2Fv-W81uh3bfyi+LkvfH5M7roMLHfHHHDUMcUv+PniOZYFzPZq9I4fRTfJuHlmBHieVMXleDA3vej4vm+H5fmgP4occaEFVhlRM5BYNy2NNd-ZGbzVkg9pK2ViTbPAMgQEqntPTfmd3yOgFgJgQgvbF+SQWr4ARF3HKGI0wyAcJcPKGFT5rFIpyK2EwgKgXAqmMqSAuSz0jDyTyOpv6XSvghCaU0h6MQyNWOo+IuYKHCnUGWH4uwcDYYGSaMAAAaAAKfAGsACUKpghqg1DSGAOUABWKx5SYDCEQ1kPIOAEK+tQAUCo4JQEmsQG8XFZoagWjqKwy1XB+EhMwXcrMspoJ2vTfa3A+B1FgdQEAz4QA4HxLeI8cBEDSKPKEGAgowC2Q8eAY4OBmAIBAFxM80iVFQCCGeDguw3BniCBpfE2oYLk2iYSHg75dG9Gpn4M4zYIn5OtAAMWIIwHgsSZHDHcZ42AKAgixPiSALJYQcmfVSWQM8coYBZJfJoTJ2TvCfSIQUrJxSmBQEGcMnhYyQCVOyEAA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

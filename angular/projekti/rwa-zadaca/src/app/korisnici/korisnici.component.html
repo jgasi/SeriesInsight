@@ -1,0 +1,53 @@
+<table>
+    <thead>
+        <tr>
+            <th>Korisničko Ime</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+            <th>Adresa</th>
+            <th>Država</th>
+            <th>Telefon</th>
+            <th>Tip Korisnika</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let korisnik of korisnici">
+            <td>{{ korisnik.korime }}</td>
+            <td>{{ korisnik.ime }}</td>
+            <td>{{ korisnik.prezime }}</td>
+            <td>{{ korisnik.email }}</td>
+            <td>{{ korisnik.adresa }}</td>
+            <td>{{ korisnik.drzava }}</td>
+            <td>{{ korisnik.telefon }}</td>
+            <td>
+                <ng-container *ngIf="korisnik.tip_korisnika_id == 1; else adminBlock">
+                    Korisnik
+                </ng-container>
+                <ng-template #adminBlock>
+                    Admin
+                </ng-template>
+            </td>
+
+            <td>
+                <button class='serija-detalji-tipka' (click)="obrisiKorisnika(korisnik)">Obriši</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIAuBDARgGxgAmAHQDttsB3ASyiQAt5sBGABgYFIBuQ4tCAJ1m4FpIGDCgAOAZxi0hIiTHZFsAWxTcA5mQL8kEUbQBMDUQA8FAX0KFqAGitRcHbF14xutOieziIGCtgDEYEEKxKIoUFCaau5Gpo5IMMZI-Ci+agTSMAQJ3OaW2VQw4Q6KaChgANZq3BAArgRQgj48tP4AHGgA7ADMAKxoIdhCLaRUZAl5BFZcUACe2EjcJZzlVTX1jcNuo+PyhBZTBAB0ktxkAFYo-LCoGOdk2mSiFSjLTqvVdQ1NGCPtXX0Bo4trQSGMJo4whEorQ2p46PoTINnHxaAQIAQ9qUeHx+NxwmRauJaL0kcDatxvNtRBBNDlBgAzDHJBkoJRkDCzWh4EAAIRgZXE2AAcjBajAedYvCgCOJ+KcyAzGcz5WQAF5SegAFjJikWMvE4zIGNoZUqnw2Px42AYR264gUjgAZPAqBAAG6uN4rc3rb4ggIANhQvU6Ws6gwOB0IRzAWRyTWyKE0XvwihphqQxoy2G4MBEWc9yIgSB0SloDEGWAZSBJLEG+tlTO45YW+NlBZgAA0ABT8XosACUg0i4lEIi52AZWDiinORKzDNmiYS2Uy2VcgxU6k02l0Blikxj7tSFBQOkpb1H45Qk80vkx-EwEEqjsUZCUam9pAo1DruuIYhCjINQqFrbAUFqHRI32QgQGsEAGQ5GBhTZOBEESNlxxgE4wHEcR4PADEkLUBAQDTYgeUSVcoHEHlaAAbUcSiQHEJBZiwB9kkgAgSPlVAGlUKAeUcABdfZCJ4kiADEeBUJAyPObwCEI2AJDIijsB5NiOPzOl6K0kBOzYyVHG09jOLpRM+LYmUoCEgyeWMpARIIMwQDMIA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

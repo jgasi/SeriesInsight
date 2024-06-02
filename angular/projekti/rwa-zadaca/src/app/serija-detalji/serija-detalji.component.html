@@ -1,0 +1,30 @@
+<div id="serijaDetalji">
+    <h1 class="naslovSerije">{{ detaljiSerije?.name }}</h1>
+    <p>{{ detaljiSerije?.overview }}</p>
+    <p><strong>Broj sezona: </strong> {{ detaljiSerije?.number_of_seasons }}</p>
+    <p><strong>Broj epizoda: </strong> {{ detaljiSerije?.number_of_episodes }}</p>
+    <p><strong>Popularnost: </strong> {{ detaljiSerije?.popularity }}</p>
+    <img id="slika" [src]="'https://image.tmdb.org/t/p/w500' + detaljiSerije?.poster_path" alt="Poster">
+    <br>
+    <a id="poveznica" [href]="detaljiSerije?.homepage" target="_blank">Vanjska stranica</a>
+
+    <form id="serijaForm" action="/serijaDetalji" method="post" *ngIf="isKorisnikPrijavljen()">
+        <input type="hidden" id="serijaId" name="serijaId" [value]="detaljiSerije?.id">
+        <button type="button" id="spremiSerijuGumb" (click)="spremiSeriju()">Spremi</button>
+    </form>
+</div>
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIDEBnGAnAlgKwIYFpYAXXAG20wAJgAdAO0soDMI6j8ncBbTUgT3iUAgljIAaSilx0U+NFiYBueowBGuMAGsA5uggBXOlHyRSEdINUxM2mMoaUADrihRMdbYIBMABkcAPe0YeOnwAC2ttMKJBAEYfHwA3MKDKNxRHUlwBZlIYQJVc-MJMdBgwIkxWQVN9LjpUshtQzCIYLhQamDYMewBfenpUDBwCYjIKSjDY6kKWNg5uXhyaEAAhGHUUSgA5GH0YVYkpGTkRpULTc0EkAA5VAHYAZgBWVVS2-3Ym7TounvQqXm7BQmAAXjBBC8-AU6AM6EN5KNCDASOQqI5Zg4uLh0Np3HEYZQfB98t9SM1-m1AYUKXQYOFItE4gA6F79QZ0YZYPAotGTTBcbSoCmaXBY4K4fz4ADumCgRDChJ8AFJUhEbMzKLh9EQIKkcXj3Pg9Y5vDDUqpzLALJQXgFJBAKVBKKoslpLdaMPh0C5MPpOpRbgEOQiuUjeeN0dqkI4IIkYGC6JgwOLaA4rra7o9Xu9Cp92LBIL7KtVKHRWHZCulMtlLGYPfmyfgfn9KGButSDbj8aFTYSQ-R4YiRpHURMqCx0Fxucip1wJZRDb2TRAzZRfIO4ZzZ2P+VRVLq9eHHGUeGcefp8No6qpF+otLoDEYTE7rpRs883qlM4IZWFWirBxnFcdxPEoeItzUL1bQrelPXQG0fT9AMoSg9t9HQFB3zjdwu3zX0ZFaKo2wfHQ9EMYxM2JFknhQUMRx5MZx2jQ8iGPVBT3aTALxwK8by4VR4DCeMMHvDRyOfKi3yzAA2XAXgeAAWB4GPDUdmP3JxJCIPQPEXYFZSZGJXSdKA1JZDsAVfNhcHcMT00YONQVLNsyiySoE09diIC4QQSVpGAmBM6E1QI6QUHnQRdIijyYAADQACnwUKAEpUhrLIciYPJYUYbAA0qJg+Bsto2CpXoh05FlEiaKBcD1LDF0yutKHcOkGTdCBGzDRhBW0RdGDlBUlTtC1CkYDUohMnU9VSeF4RAMQQCYXgYB2bg4EQfJuEyGAWRQMAUBQJbwFYVbtAQEBHMoVYyW6KAUFWQQAG0JtukAUCIPg8jpdhIDoC65BIIxcSgVZCgAXSHU6AYugAxcwcSIK7sGwuhTtgRwTsQG7Vi+n6YD+56Prir6jkKfHvt+vCbKBr7pHqxCSdWMmiAhuEQD6IA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

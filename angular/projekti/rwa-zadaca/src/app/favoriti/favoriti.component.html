@@ -1,0 +1,35 @@
+<div *ngIf="favoriti && favoriti.length > 0" class="favoriti-container">
+    <table class="favoriti-table">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Detalji</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let favorit of favoriti" class="favorit-item">
+                <td>{{ favorit.naziv }} {{favorit.name}}</td>
+                <td>{{ favorit.opis }} {{favorit.overview}}</td>
+                <td>
+                    <button (click)="navigirajNaDetalje(favorit.TMDB_id_serije)">Pogledaj detalje</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIB0AzAhgNwgJwJYBdcBaSAO3zV1JmwAJgAdU22lCco9AW1wBsBPeLQCCeNLwA0tAM5pS0otJq4UAbiYsARmjABrAObYIAV1JQSEXjiGaYufTHXNaABzRQoVfUIBMABhcADycWHlIiAAs7fQj8IQBGPz8MCJDaT2kXXjRBVl4YYI08gqJPbBgwQnYhSF5jLlI08XtwghguaRqYchonAF8mJlRMHAJiCk18+iKAd1wofAiEpIBSNLYObj5cgHlpGfEoKVl5RWU1Is0cWGwLXmyXJRrLB6U0rjRsfSoifAgXXwBQrObR6QwmMx3ay0GYRNr9QakYZYPCEX5oSYwWiLCRDdAosbozHYqDTEHXGgJIIySzzWgAYgAHJoAOwAZgArJo0m4PF5lkE0vgCvgiM19KQhPkUPgEaQ8SNUeMMVNFmStDoDEZTOZatCmazOdyinrsEJYfCisLAqLxZLaGBusLsHKFQTRW0uOraFdsDcqYEabw6fSwGG0r6bkRsO5cMZOrRGYKih8vlQBYG-K6kfjRh7hV6XN7U997VmmAN5TnFQQiJ6fcZ8H9mIwQZrwTqoWaGcz2Vy0qbzXDhTz3J5SN5aIlk+S-ZTaKR2I5LhTbjHPPGhByZywwMZsNJoS4IFRne9PqXfv8M+t2KKtgIhHsDrwjjI5AolHgLs58DH5GM1Q+u22qQqatB+EgbLSNmyJ5nWBYNk21QRBAGA0N6oJahCuqWPqABsaAciyAAsLKwY6PS3GQFBUBhrYsMe0iAfa5TZIQ6ERhAyFcEI5bONKcS0ByfhrFa-7SGw2C8diEnsTAAAaAAURAiSsACUaQZFkORCCg+TAiwABW8aECg-AWD05BdFR2ZMCAEggCgfAwAAcmgXBwIgBQeVkMBINIYDSNIDngOwzn6AgIAMbQDAgCK3RQNIcVCAA2kULBxdI+D8PkwYcGQEWKBQZifFAcVFAAuhWoWFfYABiOAfPgUVGYepChbAjxRTFWU5Xlp4pbFIDydlcW4s4fW5TA+WinV+jFXIUBlUNcWjfgFWkH0IB9EAA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

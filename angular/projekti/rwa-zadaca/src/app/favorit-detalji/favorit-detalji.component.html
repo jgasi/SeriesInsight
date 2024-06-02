@@ -1,0 +1,41 @@
+<div *ngIf="favorit" class="favorit-detalji-container">
+    <h1> {{ favorit.name }}</h1>
+    <p><strong>Opis:</strong> {{ favorit.overview }}</p>
+    <p><strong>Broj sezona:</strong> {{ favorit.number_of_seasons }}</p>
+    <p><strong>Broj epizoda:</strong> {{ favorit.number_of_episodes }}</p>
+    <p><strong>Popularnost:</strong> {{ favorit.popularity }}</p>
+    <img [src]="'https://image.tmdb.org/t/p/w500' + favorit.poster_path" alt="Poster">
+    <a [href]="favorit.homepage" class="vanjskaStranica" target="_blank">Vanjska stranica</a>
+    <br>
+
+    <div *ngIf="favorit.seasons && favorit.seasons.length > 0" class="divZaSezone">
+        <div *ngFor="let sezona of favorit.seasons">
+            <h2><strong>Sezona</strong> {{ sezona.season_number }}: {{ sezona.name }}</h2>
+            <p><strong>Opis sezone:</strong> {{ sezona.overview }}</p>
+            <p><strong>Broj epizoda:</strong> {{ sezona.episode_count }}</p>
+            <img [src]="'https://image.tmdb.org/t/p/w500' + sezona.poster_path" alt="Poster sezone">
+        </div>
+    </div>
+    <div *ngIf="!(favorit.seasons && favorit.seasons.length > 0)">
+        <p>Nema informacija o sezonama u odgovoru.</p>
+    </div>
+</div>
+
+<div *ngIf="!favorit">
+    <p>Detalji favorita nisu dostupni.</p>
+</div>
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIB0AzAhgNwgJwJYBcBaWfNAGwCtdDIA7U3WmbAAmAB1aWWUJ7D0AW1xkAnvBYBBPOQA0LAM5paCwgua4UAbk7cARmjABrAObYIAV1pQaEMjgl6YuEzB1cWABzRQojExIATAAMngAe7tzCtIQAFs4msfgSAIzBwRixkSx+Cp5kaOI8ZDARusWlxLjYMGD4uHwSkGQWgrTZ5C4xBDCCCk0w9MzuAL6cnKiYOATEMKSU1HQMTKyxKWzlvPxCIkXsIABCMAYKLAByMBYw+-JKKmoa2uXNDiwAxAAcegDsAMwArHpsvhSkROiZaAMhthslsiApcAAvGASf6hMoeQRobAmRipdEsYKjca0SZYPBEEjkKi2ehoRjMFixQIbDxwgRoYRiCT7I4nc6Xa4gW7KVTqPBPDwvbAST4-AFA8ogsJgshdKEgmGbPjwpEolgAFnR2SxOLxLDS4UJxNoE3Q5JmVIWtOWjM8rO47J23JYACVyDAAO6FEX3cWaYGgwjgyEsMCDTXZNVMOIJJKpJD-G12qYU2bzGlLekrFi4QQmD0sLFhQiB3BQfCxfHBACk2XiLnTLDQFnwEBN2NxMT7niCxvKehwsBlLH+VoUdnrLD0BWM2Un2GnhGwPlwFn6LA+4WzpPt00pc2pix1xcZaErXs5uwkAHkFMGyFBQ2LHtlpbKvj+QFIxVWZIB3epGhYWg+DccpcnyQpHHsNclSjGMNWGcpTSHQgR3xY9ODGW1T1zR1L2dIsGVWdYFHwcxaArDg2R1Ws02SZc7CgE8yXPfMrxdW9VhZOiGKY7V+EDdjHC4ni-AwQhETQB5EVgysEIKIoUBKDFPR0qoajqBpY2aVp2nKGNCB6PpMK1DxlVVdU4wTLDMUHRg8IgUcWBCQjaGIiZ5MU5T1FUpgmRZZjPVY70ijfD8v0UUUHglP87FeOUgMVFj+ARZEJF+cc3LNWNLTCa0iJJJAgqUlS1PdKKeBip8fX9Epg1Eb8UojbD3NKgkiUqkjqtwBTatCtSy3EtyazrBsmwtdI23KDtEg4ns+wHErPO8sr1ynZhUXnRcoGXVcjH2zdmG3Xd9wkI8MQC0kapCmAwpgbsH2ark4vfchEruH9UuedKZ0yhUQIvcC0Eg2MYKYbINKQs6IFQ+z0LVCFbK23D8MWvynqQDBlAoBQjBC+jlFwMB70ax8fp5Q5jjQU4LiuG4krDX8JN1fKLQANj87h-xYQNYh6FgAEIy08HBSHoddDFMcwrBsEXweAicDuwG6-Duw8ha8Hw-EYgjdJyXA8k0iRGGTGBCBXVGLq1q6Z1883KZUAhjMcJWzEsaxbHsVhgiQX4FB44naFJ8m1E96m0HgWIIAwRlGoMYx-dVoOMv5tB-m+A1vh4+NoUE6jK1lhFYYkGoCnqVP9vwPtBAkQaPBKFAOLRZb7J3FReGwVuWE9hR65gAANAAKQge4ASkRy3EK0nTsgofd6hQUQXQTbGhomYm1SgGGcFORqkaKW2GQdlDnZI7gpsrbg5sbVEiu4bhVq7Db+3KYjiOFCAFAIgYBnE5HARApROT5BgEgBQYAFAKEAXQYBJgEAgEavsUEgwoAKH2BIAA2uUbg+w6KiBKMmIgKCXBx2UMfTc+xygAF0iLIL4KggAYjgLE+B0Gkz4IA2AngkGIEwSAMhFDGD4HwSwfY486I3HKKQ-A5CYCUNpKg2h1hsRQBkXImGMAFEgFYSMIAA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

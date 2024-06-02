@@ -1,0 +1,26 @@
+<div class="main-page">
+  <header>
+    <h1>Tražilica serija</h1>
+  </header>
+  <nav>
+    <a routerLink="/pocetna" (click)="putanja='pocetna'">Pocetna</a>
+    <a routerLink="/prijava" (click)="putanja='prijava'">Prijava</a>
+    <a routerLink="/registracija" (click)="putanja='registracija'">Registracija</a>
+    <a routerLink="/dnevnik" (click)="putanja='dnevnik'">Dnevnik</a>
+    <a routerLink="/dokumentacija" (click)="putanja='dokumentacija'">Dokumentacija</a>
+    <a routerLink="/favoriti" (click)="putanja='favoriti'">Favoriti</a>
+    <a routerLink="/korisnici" (click)="putanja='korisnici'">Korisnici</a>
+    <a routerLink="/profil" (click)="putanja='profil'">Profil</a>
+    <a routerLink="/odjava" routerLinkActive="active">Odjava</a>
+  </nav>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+  <br>
+  <footer></footer>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+
+</div>

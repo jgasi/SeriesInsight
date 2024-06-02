@@ -1,0 +1,116 @@
+@mixin button-styles(
+  $bg-color: #8b735b,
+  $text-color: white,
+  $hover-color: #6a5747
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.g-recaptcha {
+  margin-bottom: 15px;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  margin: 0;
+
+  .prijava-div {
+    background-color: #8b735b;
+    padding: 50px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
+.naslov-prijave {
+  font-family: "Bebas Neue", sans-serif;
+  color: white;
+  font-size: 30px;
+  margin-top: 0;
+}
+
+.naslov-recaptche {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 30px;
+  margin-top: 40px;
+}
+
+.korisnickoImeK {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.lozinkaK {
+  font-family: "Oswald", sans-serif;
+  color: white;
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.inputKorisnickoImeK,
+.inputLozinkaK {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  @include button-styles(beige, #6a5747, white);
+}
+
+.github-btn-login {
+  @include button-styles(beige, #6a5747, white);
+  margin-top: 10px;
+}
+
+.center-container {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  transform: translateX(100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.validators {
+  display: inline-block;
+  margin-right: 0px;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
+
+.podaciZaPrijavu {
+  font-family: "Oswald", sans-serif;
+  color: black;
+  font-size: 18px;
+  position: absolute;
+  bottom: 50%;
+  left: 0;
+  transform: translateY(50%);
+  padding-right: 20px;
+  text-align: left;
+}

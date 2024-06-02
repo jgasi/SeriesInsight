@@ -1,0 +1,156 @@
+@mixin button-styles(
+  $bg-color: #8b735b,
+  $text-color: white,
+  $hover-color: #6a5747
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.favorit-detalji-container {
+  font-family: "Arial", sans-serif;
+  background-color: beige;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favorit-detalji-container h1 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #8b735b;
+  text-align: center;
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+.favorit-detalji-container h2 {
+  font-family: "Bebas Neue", sans-serif;
+  color: #8b735b;
+  text-align: center;
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+.favorit-detalji-container p {
+  font-family: "Raleway", sans-serif;
+  margin: 10px 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.favorit-detalji-container img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border: 5px solid black;
+  border-radius: 8px;
+}
+
+.favorit-detalji-container a {
+  font-family: "Oswald", sans-serif;
+  color: #8b735b;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.favorit-detalji-container h1 strong {
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
+.favorit-detalji-container h2 strong {
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
+.divZaSezone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.divZaSezone h2 {
+  font-family: "Oswald", sans-serif;
+  color: #8b735b;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.divZaSezone p {
+  font-family: "Raleway", sans-serif;
+  margin: 10px 0;
+}
+
+.divZaSezone img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border: 5px solid black;
+  border-radius: 8px;
+}
+
+.divZaSezone strong {
+  font-weight: bold;
+  font-family: "Oswald", sans-serif;
+}
+
+.divZaSezone a {
+  font-family: "Oswald", sans-serif;
+  color: #8b735b;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.vanjskaStranica {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 16px;
+  color: white !important;
+  background-color: #8b735b;
+  border-radius: 8px;
+  padding: 10px;
+  display: inline-block;
+  border: 20px;
+  transition: background-color 0.3s;
+}
+
+.vanjskaStranica:hover {
+  background-color: #6a5747;
+}
+
+.center-container {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.validators {
+  display: inline-block;
+  margin-right: 0px;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}

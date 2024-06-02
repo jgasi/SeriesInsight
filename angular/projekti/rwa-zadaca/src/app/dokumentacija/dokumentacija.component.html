@@ -1,0 +1,277 @@
+<h1>Dokumentacija</h1>
+<h2>Informacije o Autoru</h2>
+<p><b>Ime: </b> Juraj</p>
+<p><b>Prezime: </b> Gaši</p>
+<p><b>FOI e-mail: </b> jgasi20&#64;foi.hr</p>
+<br>
+<img class="slikaAutora" src="../../assets/slike/slikaAutora.png" alt="slika autora" width="200" height="200"><br>
+<br>
+
+<h2>ERA Model:</h2>
+
+<a class="slikaERAa" href="../../assets/slike/ERAmodel-2-rwa-zadaca.png" target="_blank" id="manjaSlika">
+    <img class="slikaERAimg" src="../../assets/slike/ERAmodel-2-rwa-zadaca.png" alt="ERA model"><br>
+</a><br>
+
+<h2>Pregled Resursa, Metoda i Parametara REST Servisa</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Resurs Parametri</th>
+            <th>GET (čitanje)</th>
+            <th>POST (kreiranje)</th>
+            <th>PUT (ažuriranje)</th>
+            <th>DELETE (brisanje)</th>
+            <th>Opis</th>
+        </tr>
+        <tr>
+            <td>baza/korisnici</td>
+            <td> vraća sve korisnike (200) </td>
+            <td> kreira novog korisnika (201) </td>
+            <td> </td>
+            <td> </td>
+            <td>Sve je napravljeno. </td>
+        </tr>
+        <tr>
+            <td> baza/korisnici/&#123;korime&#125; </td>
+            <td> vraća podatke određenog korisnika (200)</td>
+            <td> "zabranjeno" (405) </td>
+            <td> ažurira određenog korisnika (201) </td>
+            <td> briše jednog korisnika (201) </td>
+            <td>Sve je napravljeno. </td>
+        </tr>
+        <tr>
+            <td>baza/korisnici/&#123;korime&#125;/prijava<br><br>
+                <b>NE TRAŽI VALIDAN JWT</b>
+            </td>
+            <td> Vraća JWT token u
+                zaglavlju ako postoji
+                sesija (201). Ako ne
+                postoji sesija javlja
+                “zabranjen pristup” (401) </td>
+            <td> Provjerava podatke
+                prijave, ako su
+                ispravni kreira sesiju.
+                (201)
+            </td>
+            <td> </td>
+            <td> </td>
+            <td>Napravljeno je, ali bez JWT. </td>
+        </tr>
+        <tr>
+            <td>baza/favoriti</td>
+            <td> Vraća sve podatke serija
+                spremljenih u favorite
+                prijavljenog korisnika
+                (200) </td>
+            <td> Dodaje novu seriju u
+                favorite prijavljenog
+                korisnika (201) </td>
+            <td> </td>
+            <td> </td>
+            <td>Sve je napravljeno. </td>
+        </tr>
+        <tr>
+            <td> baza/favoriti/&#123;id&#125; </td>
+            <td> Vraća sve podatke tražene
+                serije u favoritima
+                prijavljenog korisnika
+                (200)
+            </td>
+            <td> “zabranjeno” (405) </td>
+            <td> “zabranjeno”
+                (405)
+            </td>
+            <td> Briše seriju
+                iz favorita
+                (201)
+            </td>
+            <td>Sve je napravljeno. </td>
+        </tr>
+        <tr>
+            <td>baza/dnevnik<br>
+                ?stranica=broj<br>
+                &sortiraj=[d | m]<br>
+                [&datumOd=datum]<br>
+                [&datumDo=datum]<br>
+                [&vrijemeOd=vrijeme]<br>
+                [&vrijemeDo=vrijeme]
+            </td>
+            <td> Vraća podatke loga za neku stranicu (broj), opcionalno filtrirano po vremenskom periodu (moguće sve
+                kombinacije datuma i vremena od ili do), te podatke dobiva sortirano silazno po "datumu i vremenu"
+                (d) ili uzlazno po metodi (m) (200) </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td>Nije napravljeno. </td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Pregled Funkcionalnosti Web Aplikacije</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Uloga</th>
+            <th>Stranica/e</th>
+            <th>Opis</th>
+        </tr>
+        <tr>
+            <td>Gost</td>
+            <td>Početna</td>
+            <td>Sve je napravljeno.
+            </td>
+        </tr>
+        <tr>
+            <td>Gost/Korisnik</td>
+            <td>SerijaDetalji</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Gost</td>
+            <td>Dokumentacija</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Gost</td>
+            <td>Prijava, Odjava</td>
+            <td>Sve je napravljeno. Dodatne informacije: napravljeno je sa kolačićem i sesijom, bez JWT.</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Profil</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>Favoriti</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Korisnik</td>
+            <td>FavoritDetalji</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>Registracija</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>Korisnici</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>Admin</td>
+            <td>Dnevnik</td>
+            <td>Nije napravljeno.</td>
+        </tr>
+    </tbody>
+</table>
+<br>
+<h1>2. Zadaća - Zadaci:</h1><br>
+<table>
+    <tbody>
+        <th>Redni broj</th>
+        <th>Opis</th>
+        <tr>
+            <td>1.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>6.</td>
+            <td>Sve je napravljeno. </td>
+        </tr>
+        <tr>
+            <td>7.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>8.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>9.</td>
+            <td>Nije napravljeno.</td>
+        </tr>
+        <tr>
+            <td>10.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>11.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>12.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>13.</td>
+            <td>Sve je napravljeno. (Ne za dodatne bodove).</td>
+        </tr>
+        <tr>
+            <td>14.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>15.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>16.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>17.</td>
+            <td>Sve je napravljeno.</td>
+        </tr>
+        <tr>
+            <td>18.</td>
+            <td>Nije napravljeno. (Dodatni bodovi).</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><b>Kako pokrenuti server:</b> skineš ZIP, otvoriš kao workspace, dodaš svoje tokene u .csv file, napraviš terminal za
+    taj projekt, napišeš cd server,
+    napišeš
+    npm start, u browseru moraš otići isključivo na ovaj url: http://localhost:12012/, jer na toj putanji je postavljen
+    dist (kompajlirani Angular)</p>
+
+<br>
+<br>
+
+
+<br>
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIAWBGABMAOgOzWgZhNgC4C0+AhgLYCWANgJ7xqYgBCMARhQM5oByMAK4xWAGjQ8K2HqR4wATjXwBuHHkh0IC5gGIAHJwDsAZgCsnNbjTEYADzIU6NAObZmYGCUVW8hEnI0AF4wzGYADAAOdr5oVBQKLjTYpJwQxMQQVMwATFExOAC+ODhIORjqaJraeoamFrH+ZDzBoWgm+bHxicmkmZHMACydlbYOpE6u7lVetgpWxdg4kRXWTeTU9ExoAEpOMADuFAwSUjJyisqxY47Obh6zPkUlJBScdDCreAc0UMRIzBQ4XCAFJYmkFLAFKRNHQKJF5B4IHQ4QiYF0EkkUv1ciMltZ-mJRlAvng0BCoYDopJkb80AZjOZLJU8JEKFAoMkXMx9NFYngbhM7tMPvhiPyCEQyJRaIxmHsPkcTpJpLJ5EpVJVFqMkKS8NwwABrFwKCBCbBQGHImr0upMiXVHRoA5IGi2WLagk6EhIGGuuhQAAUMAAbl4AJR68kUI0ms0Wq1aJ0ut3orUvAXe-5++hB6BQSNYaz6mPG03my2O5gp93p7CegB0PGchoopEUbYopKQMFcSGIzAoQkysU5PEicO27wgRoxPWmQOpQ5Hz3xTZbbY7pBoVBc3d7Ln7g+HEFHNHHk+Y09nlW6WMB+TQy9PlQpily1J4tJJ71LCxeuguBApBCCsRYlrG5YJlWtqMg0lRshyXIPtSeR8q+2hQqQCjsjQQg8GE6HWGOE7HMwyTONgMCpFoN5rFKGyytsrAcNwfCCCI4gquc6pXJUME1mmBL2LcUwPN48yVOsLQhICvIFMJ4ywJAOHEDQRDMNgRBCZmqpuup0wGmW8aVtaChoOEDYmDwViVAAZPASAQGG5ngWSRlxhWiY2roABsFBmEYgxGB6q7LOSpLrAcB5HuSyJQI0DEylszAAPI8EcAanKqFwav+a6eBJVqvMkiikpEEAtGpGloAoMBwmpYbgukmTZBZsSigOaARGCow4TIhAKG1xD9c2FC2AAGoGpA9eGZ4XmRBAfApeAAFb4Wp+AMMVtgkOJcz5TgDYhpMUDjdofBuSRl5oBRpU0TOhq2dYO57m53y-P8YR4mSaA9n2XXPqF9Y4CAYggPg9AwPw1BwIg9jUBOMBNmAPA8GD4BEJDLgICAbmsCJXhQDwrDMAA2iyLAgDwxAMB8lFkJA2DY3IxDSGdkKsJUAC6RQY0z2MAGLaPExC46tX7YBjsAIrj+PU7T9PJMQpNUw1MA0+IlSsDTdP1crxUszT7MJFAqusOrmsgHzhRAA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

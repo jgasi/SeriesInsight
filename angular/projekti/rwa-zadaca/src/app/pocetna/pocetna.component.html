@@ -1,0 +1,55 @@
+<br>
+<div>
+    <input type="text" placeholder="Pretraži serije..." [(ngModel)]="filter" (ngModelChange)="pretrazi()" />
+</div>
+<br>
+
+<div *ngIf="filter.length >=3" id="stranicenje" class="stranicenje">
+    <button *ngIf="stranica !== 1" (click)="promijeniStranicu(1)">
+        << </button>
+            <button *ngIf="stranica !== 1" (click)="promijeniStranicu(stranica - 1)">
+                < </button>
+                    <button>{{ stranica }} / {{ ukupno }}</button>
+                    <button *ngIf="stranica !== ukupno" (click)="promijeniStranicu(stranica + 1)">
+                        ></button>
+                    <button *ngIf="stranica !== ukupno" (click)="promijeniStranicu(ukupno)">
+                        >></button>
+</div>
+<br>
+
+<table border="1">
+    <tr *ngIf="filter.length >=3" class="naslovi-tablica">
+        <th>Naslov</th>
+        <th>Opis</th>
+        <th>Detalji</th>
+    </tr>
+    <tr *ngFor="let serija of serije">
+        <td class="imeSerije">{{ serija.name }}</td>
+        <td class="opisSerije">{{ serija.overview }}</td>
+        <td>
+            <button (click)="prikaziSerijaDetaljiStranicu(serija.id)">
+                Detalji serije
+            </button>
+        </td>
+    </tr>
+</table>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIAuBDARgGxgAmAHQDttsB3ASyiQAt5sBGABgYFIBuQ4tCAJ1m4FpIGDCgAOAZxi0hIiTHZFsAWxTcA5mQK0ATA1EAPbAwWcUYANZruEAK4EogiBh60SVMknmEAvoULVcDmw0M0trOwchF2wAYgAONAB2AGYAVjQTbCjuV3dPTNEUKChNNVpGAwVfAn8oQMVC4tLyvX0qvwI0GyQkCCJ8RRCLK1t7R2cc2ISU9Mzs3I8vBqKSgjLsOMqgrl4YSYI+peIwG25xaNEITU9uTJV1TX5uMjUqJFpUrcGePieishs4lomzaQSQ3BQBHEHjIfVoQzCo0iTh4RgAdMlxO0ap1ur0tFQIAA3Pb1UzDcJjeaxABsKFSiQALIlsR1NKJugBtJAAT1EMAAvHhkDB9EhhQBdMmkCjUHQsAorZobL6cH57coGbDnDAUKZJNIZbbqgQQkqAj6q4IQfT8aEAL2VO1+XFBigAZn0kHayPapPRGVaSuJRCIefDnBY7qoNFojNgUN0IKyCDFxODIWQwDACAArHBdHp9aWegje90oJRkDDh7DCgBCMBC4mwADkYDYYMKADTayHiO17MjuzIIkYRcbReIG2ZBaluRaKpprYFW50a7AHAhHLKnc6TS7XPajk1-c1A7CfN3Ee6xzXX7AZqEwuHBULjqko7jozEptNPrMc3zYI8ThQkSW-AZyURCdqRiOkGWZP90whAhALzHAoMfUVvRQXU1DjbMy2PIJb0eXpRBaL5qkIf9UPQ4DC3xeADiQAAKeARHTQR3AwKAAEppTIggnheN4qLdGicTRIibkcMsUE0UksMuaEkFhONuBgER1JJE8iyUWhjCCLB3XeS8FTBVDxE9bhDMfaydJgAANNj+FSFh+MyYNQxQWt3SwB9c0BdT3R5eTPDLaQcxuFM0SJPCKBQXozmlHyw1oTRdW3fhMAgKMOmIMglDUaViHISgaAsq1iCoGAxPMxNekyapqhAbsQHdasYFbSs4EQUVK1DGA0XEMBxHEdrwD6Lq1AQEAsOFHCcygcRhVoTkgmIYV0x5LBsu9SACFmu1UHsVQoGFIIJR8KajtmgAxHgVCQebc3OAgptgCR5sWkBdv2651rrEAnPTHsgh23lAbLeSTvTSEoAu4HhTB8UQFu7wgA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

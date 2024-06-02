@@ -1,0 +1,82 @@
+@mixin button-styles(
+  $bg-color: #8b735b,
+  $text-color: white,
+  $hover-color: #6a5747
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.container {
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  font-size: 30px;
+}
+
+.card {
+  background-color: beige;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+
+  h1 {
+    font-family: "Bebas Neue", sans-serif;
+    color: #8b735b;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-family: "Raleway", sans-serif;
+    color: #8b735b;
+    margin-bottom: 20px;
+  }
+
+  .btn-primary {
+    background-color: #8b735b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 16px;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #6a5747;
+    }
+  }
+}
+
+.center-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.validators {
+  display: inline-block;
+  margin-right: 0px;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}

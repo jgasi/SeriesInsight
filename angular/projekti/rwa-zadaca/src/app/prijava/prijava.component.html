@@ -1,0 +1,58 @@
+<div class="prijava-div">
+    <h1 class="naslov-prijave">Prijava</h1>
+    <form class="prijava-forma" (ngSubmit)="prijavi()">
+        <div>
+            <label class="korisnickoImeK" for="korisnickoIme">Korisničko ime:</label>
+            <input class="inputKorisnickoImeK" type="text" id="korisnickoIme" name="korisnickoIme"
+                [(ngModel)]="korisnickoIme" required />
+        </div>
+        <div>
+            <label class="lozinkaK" for="lozinka">Lozinka:</label>
+            <input class="inputLozinkaK" type="password" id="lozinka" name="lozinka" [(ngModel)]="lozinka" required />
+        </div>
+    </form>
+    <div *ngIf="greskaPoruka" class="greska-poruka">
+        {{ greskaPoruka }}
+    </div>
+
+    <div class="container-fluid py-3">
+        <h1 class="naslov-recaptche">Angular reCAPTCHA v3</h1>
+
+        <form #form="ngForm">
+            <div class="row mt-3">
+                <div class="col-sm-12 mb-2">
+                    <button type="button" class="btn btn-sm btn-primary" (click)="send(form)">Prijavi se</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
+
+    <button class="github-btn-login" type="button" (click)="GithubLogin()">Prijavi se putem GitHub-a</button>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+</div>
+
+
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIB0AjArgFwxAdgWgGcMBPAGxgIAJgAdHSylAQzAGsBzAJwjRyj0ikIneJQDEADhQB2AMwBWFAG46DQcNEB3ABYBLDDBX1KAByZQounO1EBGAAwmAHpQBMjp0YYphsEZRxcQ1VGXxhOPE5zXTQCOw8vSjA0TgINUwgrA05EgDNcDDxcpgBbXVJiURoQACEYZioAORg0GGqAGkoCJhwCQnDdXLyCwl0ALxhRd2dEjCje-V1cUWY2Lh4+AQghTkp7JFkCIwBfOjpUTGx8IjIKeG0IADdw6hDVjm5efnV-MQA2JjyaQAFmkJzOOCQ7EiMDATBMGDA2iYr2MJSYnHYVjwPiwEBKdnkMzopxwdHuECIqIYlgIJlITEqlFy5E8IQAVrEMINiFscAZ+aIwDB+eFEkxSLp2Ph9DASnEkiLsoltDApdoMKIJPZHtpEujMVZRPZwWTISZOLp2UxHkw8JZHtTGCwPhtvtt0pIZAplCEzBYrDZKPIEm8whEopZYlNQ8YDE5ChKpTghUqxSSIUgcEwCEJHngLVabTAnfl+UVSuUmdU6g1KM1Wh0uj0+gQBkMQj8tHoDMNywRxpNKLJYwwDVj8NgTMbTeds7mnjC4QikSXaMYu5QdLK+4UBxNRCPiWiMRO8FPRMDY6TzqxhLoCDhdGwIE7N9veyEy3vBzHj2PT2xC9KCvY8b0hIQxisVgUXXNQPX8D9gmMb9RgPNxR0occgIgacQOvTMrBMS5WHac4iMuUgnU0XQoAwbR4nsABSRJ-Usax4n-LDAPwXFsAJShbCJNljB8Tg-DsZwum2WjxDAeTEjEvxImiaNgy41D9yHWw-jAzMUAwfBCwNYgnXedYvi2HYVjVdhkPg6zxABIFQVY8x2KDBwpOmETvHDURAhwezQnE8IVKjBUvN8pIUjSfwTEyUUci-EZijKCoqlqeoc3rFo2hATpul6fpLQ7FCRi0v9ormFtFmWZ01k+TYfj2A4jgzM0oX0bQ0BQHFDLwIQJzMl0LOahCbKlYLN3+QEQTBP13MDTiXB8xT-ICIJ1tCiNVMizDklSdIEqydMT0NSdcJW3cK3S6ssrrBt8sKlsSsGG7KowriaoWbl6vMpr3R2VrDlnSFhSSvkMCYKwXjgjIBz+lNKCYFA0lITBgr4-EZxCS12A1RiWJCH6CHyTgBNJhkDAADQACgcZiAEpElpelGVEFkYGizkiB5KGlVTJLxUlaU8FleVOdZPARSgMGkFtSUoCYbBUidNmGSZKxJSCnEhDYeXFdolXhCoXQSnYajaPo0QQy41V1U1FHMAgU0CpAXJyhgRpSjgRBudKekYCQAgwAIAh3cgHBPfYBAQHh6puYFKACGqUQAG0QgYaobnIHXCijmPCGhvgMSgaoQgAXRJSPcBjgAxYR0QwOP2TSHB3dgEwI8QBOQFzmB87TyhqmpigMA6EIc5IPOsj5IuiB6ZXxOH0eVfHiucGOEBjiAA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>
+<p class="podaciZaPrijavu"><b>Podaci za prijavu:</b><br>
+    <b>Admin</b> --- <u>korisničko ime:</u> admin <u>lozinka:</u> rwa<br>
+    <b>Običan korisnik</b> --- <u>koricničko ime:</u> obican <u>lozinka:</u> rwa
+</p>

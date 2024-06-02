@@ -1,0 +1,35 @@
+<div>
+
+    <h1>Provjeri TOTP</h1>
+    <form #forma="ngForm" (ngSubmit)="provjeriTOTP(forma)">
+        <label for="totp">Unesite TOTP:</label>
+        <input type="text" id="totp" name="totp" [(ngModel)]="totp" required>
+        <br>
+        <button type="submit">Provjeri TOTP</button>
+    </form>
+    <p *ngIf="poruka">{{ poruka }}</p>
+
+    <br><br><br>
+    <h3>Koristim FreeOTP na mobitelu za provjeru TOTP :</h3>
+    <a>
+        <strong> Secret:</strong> Dobiješ kada uključiš na profilu (samo prvi puta)<br>
+        <strong> type:</strong> TOTP<br>
+        <strong>digits:</strong> 6<br>
+        <strong>algorithm:</strong> SHA256<br>
+        <strong>Interval:</strong> 30</a>
+</div>
+
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIoEsBuACYAdAdu9ARgIZgDWA5gE4QCuOUAtJADYSXyEzLkwDcu+AA5EoKHOQ4AmAAyCAHvzzoUAZ0HMiATw4AzZjAUD0egwxSUYYAC7IIODixoBbHIvxFm3HA2RWYTlQcYHD9KRQBfXFwACwBGTCMdOysGHSInZGZtdCwQACEYYhV0ADkYGhhcgBp0FSIcFQYVGEpkHTd0FjYOAGIADgIAdgBmAFYCDr85FI8vIJCWjqSQpuQALxgOABZZQxxInFwkyicEpSciSnJkbysIQSldyYMZz3J7TuDQiKicDQIYMwzvguux0P0hmMJkYLlcbgxWuRolYOLEnrgDrgboIaFZgehhKIbhJ0Gj5B1YddvAQIFY7k5Uej9r8CLi7nhsEpiGQqLR6EwIKwwRCRuMOqCOAB3aK+PhGQliElkuToGTkow0yiwME4OxyrlsbUIkTIGiBdCjdVKMA0SgqboEiA3b5GKyUeoqXy2D7cijUOiMUHoaQAOmGKh+hxwrLpdng0QgqBa+N9vIDAqFvQAbERRoMtoNI7hBPjKfC7g9VUz8FNXnNPgswkYJeCBqLocyo9FhviWyKoc9pgxZu95i6lMsUp6NlItlb8GXbvcOMMmZicERe4KHf2xa6XsO3h8wF9FkZVOotBwCKwyBTLlSGBXGfP0J4cDAGNEuEiUaSQ6MRY4CGJ6NgKIREDcyackIECejYcboBYGg2EmHQ0rGDLBh0+g6H+ozSAApJM7oNMcWFuh6KEwAAGgAFAwBGEQAlB0F4aNkJh7PgABWZo2DomjgX4IRjmeE76HIZjIBY1jehw1CSkBIaoLMUBEHcdr4uxV7oDc76fjeEB3r8+DIE45D4vgkrIFAVjRBwBGvvg37cMiHBELiEAdAcBwgFUIA6JkMAlOkcCIAY6TqDAIYqGAKgqP54B2EF5AICAME5CALzBFAKi5BwADaRj4LkKhWJo+jvikkA4KlTRWPU6larkRgALoYkltWpQAYmwFxWOlPH2jgSWwIIiWIJlZUVVVzoFVl1HldURgzZVgLOuB9XlU1lxQAtuRLVYrX7CA4RAA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

@@ -1,0 +1,104 @@
+@mixin button-styles(
+  $bg-color: #8b735b,
+  $text-color: white,
+  $hover-color: #6a5747
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+.favoriti-container {
+  font-family: "Arial", sans-serif;
+  background-color: beige;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.favoriti-table {
+  width: 100%;
+  font-family: "Oswald", sans-serif;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+}
+
+.favoriti-table th,
+.favoriti-table td {
+  border: 1px solid #8b735b;
+  padding: 10px;
+  text-align: left;
+}
+
+.favoriti-table th {
+  background-color: #8b735b;
+  color: white;
+  text-align: center;
+}
+
+.favorit-item {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+.favorit-item p {
+  margin: 0;
+}
+
+.favorit-item button {
+  background-color: #8b735b;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-family: "Oswald", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.favorit-item button:hover {
+  background-color: #6a5747;
+}
+
+.favorit-item button:hover {
+  background-color: #6a5747;
+}
+
+.favoriti-table th,
+.favoriti-table td {
+  font-family: "Raleway", sans-serif;
+}
+
+.center-container {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+}
+
+.validators {
+  display: inline-block;
+  margin-right: 0px;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}

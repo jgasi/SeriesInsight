@@ -1,0 +1,107 @@
+<div>
+    <h1>Registracija</h1>
+    <form>
+        <div>
+            <label for="korime">Korisničko ime:</label>
+            <input type="text" id="korime" name="korime" [(ngModel)]="korisnik.korime" required
+                (input)="provjeriKorisnickoIme()" [pattern]="korisnickoImePattern">
+            <div *ngIf="!korisnickoImeValid" class="poruka">
+                Morate unijeti barem 3 znaka. Dozvoljena samo slova a-Ž i brojevi.
+            </div>
+        </div>
+
+        <div>
+            <label for="ime">Ime:</label>
+            <input type="text" id="ime" name="ime" [(ngModel)]="korisnik.ime" (input)="provjeriIme()"
+                [pattern]="imePattern">
+            <div *ngIf="!imeValid" class="poruka">
+                Dozvoljena samo slova a-Ž.
+            </div>
+        </div>
+
+        <div>
+            <label for="prezime">Prezime:</label>
+            <input type="text" id="prezime" name="prezime" [(ngModel)]="korisnik.prezime" (input)="provjeriPrezime()"
+                [pattern]="prezimePattern">
+            <div *ngIf="!prezimeValid" class="poruka">
+                Dozvoljena samo slova a-Ž.
+            </div>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" [(ngModel)]="korisnik.email" required (input)="provjeriEmail()"
+                [pattern]="emailPattern">
+            <div *ngIf="!emailValid" class="poruka">
+                Primjer: ime&#64;gmail.com
+            </div>
+        </div>
+
+        <div>
+            <label for="lozinka">Lozinka:</label>
+            <input type="password" id="lozinka" name="lozinka" [(ngModel)]="korisnik.lozinka" required
+                (input)="provjeriLozinku()" [pattern]="lozinkaPattern">
+            <div *ngIf="!lozinkaValid" class="poruka">
+                Morate unijeti barem 3 znaka. Dozvoljena samo slova a-Z i brojevi.
+            </div>
+        </div>
+
+        <div>
+            <label for="adresa">Adresa:</label>
+            <input type="text" id="adresa" name="adresa" [(ngModel)]="korisnik.adresa" (input)="provjeriAdresu()"
+                [pattern]="adresaPattern">
+            <div *ngIf="!adresaValid" class="poruka">
+                Dozvoljena su slova a-Ž, brojevi te znakovi "." i ","
+            </div>
+        </div>
+
+        <div>
+            <label for="drzava">Država:</label>
+            <input type="text" id="drzava" name="drzava" [(ngModel)]="korisnik.drzava" (input)="provjeriDrzavu()"
+                [pattern]="drzavaPattern">
+            <div *ngIf="!drzavaValid" class="poruka">
+                Dozvoljena samo slova a-Ž.
+            </div>
+        </div>
+
+        <div>
+            <label for="telefon">Telefon:</label>
+            <input type="tel" id="telefon" name="telefon" [(ngModel)]="korisnik.telefon" (input)="provjeriTelefon()"
+                [pattern]="telefonPattern">
+            <div *ngIf="!telefonValid" class="poruka">
+                Dozvoljeni samo brojevi.
+            </div>
+        </div>
+
+        <div class="container-fluid py-3">
+            <h2>Angular reCAPTCHA v3</h2>
+
+            <form #form="ngForm">
+                <div class="row mt-3">
+                    <div class="col-sm-12 mb-2">
+                        <button type="button" class="btn btn-sm btn-primary" (click)="send(form)">Registriraj
+                            se</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="https://www.google.com/recaptcha/api.js?render=explicit"></script>
+
+
+    </form>
+</div>
+<br><br><br><br><br>
+<div class="center-container">
+    <div class="validators">
+        <a href="https://validator.w3.org/#validate_by_input" target="_blank">
+            <img src="../../assets/slike/validatorHTML.png" alt="htmlValidacija">
+        </a>
+    </div>
+
+    <div class="validators">
+        <a href="https://stylelint.io/demo/#N4Igxg9gJgpiBcIoEsBuACYAdAdu9ARgIZgDWA5gE4QCuOUAtJADYSXyEzLkwDcu+FAGcADsyIBPDgDNmMAB7886WQoYpKMMABdkEHBxY0AtjiX4izbjgbJtMY0MMwc9ykoC+uXAAsAjJgCKvraDNJExsjMUuhYIABCMMRC6AByMDQwcQA06EJEOEIMQjCUyNLm6CxsHADEABwEAOwAzACsBJX28qGW1s6upZXSIcXIAF4wHAAsAAwiikHGRJTkyDYEENraEMYcAEzzizheOLgjlMaBysvyDADuyFDaPjOzR5XLq+scRDQ7nm8OHEBBgzGu+Gq7HQDWa7U6QWEYkkHAIrDInxWaw2Wx2e3QbQWgLOOHWIn+EPQIiIUBQOHIHD8HyWWPWDE2212jMJx3wj2er3Qc2Zyk2lFg0L8CzyECsUBhYEVlTFEoYlBpyBoTgJRKCI1cY0mjIAbLqTkCyf8AHT02w4VB9eXYUVsCWMq08mVy9CaKDE3BWgjaGwiMpfCSU4hkKi0ehMWU1GGNVodSpQjj3Hx2PhBam09YM9BM6WHM34FWlDg4fQ5l3i0pqjVaxkiyE0ShCRMiCDrNzDUbhSLRDhxRLJNIZLIgXL5QrFUrlfsGoQTKboUu89DadWFOx6AyEEgUah0RhQ9CzK0tIRKIIAMngPggqFKlPLR5jp-jrGhtWNRDaJppiaSpThZb4bB2EQWzNMCcCtbtKBoUgiEpdMkzhVNwOxdlcS5dceX9HAfH2NCE1-ZN4SXUIVyNdAWlbdAvhwqC3lgoErTAFw3HjVwiHWV9nXwbsV10fQOE0cRdBfZU8PxWZKjkaRtA4NpZgAUi6HchAufFtwKIQpJgAANAAKBg1PUgBKSokXEGJVE3AArLVdGkCRePsVwBj7PU5DuDQtDEg9qHuIirQdOUiB2DtKTslF0HWKwcBgdl0VIW9lGQYxyDfdB+ReVTGPwHwuHIHwVPQP4ASCU5TmnEBpCiGBUgiOBEAUCIxBgK0hDAIQhAayAcCa8gEBAITYhABQvKgIQ4g4ABtIJ8DiIRtAkORktCYbRuKbQCigFYoDiIIAF1cA8Ib9FGgAxNhlm0canM7HAGtgERBsQSa1o2rbewWqajPWnIgl+zawV7Xi9vWw7jsBuJge0U6ThADwgA"
+            target="_blank">
+            <img src="../../assets/slike/SCSSvalidator.png" alt="htmlValidacija">
+        </a>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+@mixin button-styles(
+  $bg-color: #8b735b,
+  $text-color: white,
+  $hover-color: #6a5747
+) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 20px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: "Raleway", sans-serif;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+thead {
+  background-color: #8b735b;
+  color: white;
+}
+
+tbody tr {
+  background-color: white;
+}
+
+.serija-detalji-tipka {
+  background-color: #8b735b;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 14px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #6a5747;
+  }
+}
+
+.center-container {
+  position: relative;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.validators {
+  display: inline-block;
+  margin-right: 0px;
+
+  img {
+    width: 50px;
+    height: auto;
+  }
+}
